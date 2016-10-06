@@ -1,0 +1,71 @@
+	\documentclass{article}
+	\usepackage{blindtext}
+	\usepackage[utf8]{inputenc}
+	
+	 \usepackage{amssymb}
+	 
+	 \usepackage{listings}
+	 
+	 \usepackage{xparse}
+
+	
+	\title{Theoretische Informatik - Übungsblatt 2}
+	\author{Alexandre Roque (14-938-278)\\Simon Janin (12-814-760)}
+	\date{\today}
+\begin{document}
+    \maketitle
+    
+
+    \section*{Aufgabe 6}
+    
+    Wir definieren $A_{n}$, $\forall n \in \mathbb{N}$ als die Menge von allen natürlichen in dem Intervall:
+    \begin{center}
+    $[2^n, 2^{n+1} - 1]$, bzw. $A_{n} = \{x_{n}|$ $2^n \le x_{n} \le 2^{n+1} - 1, x_{n} \in \mathbb{N}\}$
+    \end{center}
+    
+    
+    \par 
+    \noindent
+    Wir wissen von der Aussage, dass die untere Schranke von jeder Menge $A_{n}$: 
+	\begin{center}
+	$2^n$ ist. \\
+\end{center}	    
+   
+   	\noindent
+    Jetzt möchten wir alle natürlichen Zahlen von diesen Mengen $A_{n}$ als binäre Kodierung repräsentieren. \\
+	Erzeugen wir dann folgende Menge $B_{n}$:
+	
+	\begin{center}
+	 $B_{n} = \{y_{n} |$ $y_{n} = Bin(x_{n})$ wobei $x_{n} \in A_{n}\}$
+\end{center}	    
+    
+    
+    \par 
+  	\noindent
+  	Dann alle wörter von $y_{n} \in B_{n}$ haben eine Länge von $n + 1$:
+	\begin{center}
+	$|y_{n}| = n + 1$, $\forall y_{n} \in B_{n}$
+\end{center}	  	
+  
+    \par 
+    \noindent
+    Somit haben wir eine Kolmogorov-Komplexität von: 
+    \begin{center}
+    $|y_{n}| + c \ge K(y_{n})$
+    \end{center}
+    \par 
+    \noindent
+    Wir wissen, dass $K(x_{n}) = K(Bin(x_{n})) \ge n - i$. Dann es ergibt die folgende Gleichung was  die Aussage für beliebige Konstanten $c$ und $c'$ beweist: 
+    \begin{center}
+    $|y_{n}| + c = (n + 1) + c = n + c' \ge K(y_{n}) = K(Bin(x_{n})) = K(x_{n}) \ge n - i$, \\
+    $\forall y_{n} \in B_{n}$, $x_{n} \in A_{n}$, $\forall i \in \mathbb{N}$ und $i < n$
+    \end{center}
+    
+    \par 
+    \noindent
+    Insgesamt gilt es:
+    \begin{center}
+    $n + c' \ge K(x_{n}) \ge n - i$, \\
+   	$\forall x_{n} \in A_{n}$, $\forall i \in \mathbb{N}$ und $i < n$
+    \end{center}
+\end{document}

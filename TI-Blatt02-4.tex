@@ -10,7 +10,7 @@
 
 	
 	\title{Theoretische Informatik - Übungsblatt 2}
-	\author{Alexandre Roque (14-938-278)}
+	\author{Alexandre Roque (14-938-278)\\Simon Janin (12-814-760)}
 	\date{\today}
 \begin{document}
     \maketitle
@@ -87,58 +87,24 @@
 	$\Rightarrow K(w_{n}) \le \log_{2}(\log_{2} \log_{2} |w_{n}|) + c'$ wobei c' = c - $\log_{2}(2)$
 	
 	\section*{Aufgabe 4b}
+	\begin{center}
+	$K(y_{n}) \le \log_{2} \log_{2} \sqrt[3]{y_{n}} + c$ \\
+	$\Rightarrow n =  \log_{2} \sqrt[3]{y_{n}}$ \\
+	$\Leftrightarrow n = \frac{1}{3} \log_{2} y_{n} $ \\
+	$\Leftrightarrow 3n = \log_{2} y_{n} $ \\
+	$\Leftrightarrow 2^{3n} = y_{n} $
+	\end{center}
 	
-	$K(a_{n}) \le \log_{2} \log_{2} \sqrt[3]{|a_{n}|} + c$ \\
-	$\Rightarrow n =  \log_{2} \sqrt[3]{|a_{n}|}$ \\
-	$\Leftrightarrow n = \frac{1}{3} \log_{2} |a_{n}| $ \\
-	$\Leftrightarrow 3n = \log_{2} |a_{n}| $ \\
-	$\Leftrightarrow 2^{3n} = |a_{n}| $
 	
 	 
-	
-	Von der Definition 2.18 des Buches wissen wir dass $K(y_{n}) = K(Bin(y_{n}))$ gilt somit definieren wir ein $a_{n} = Bin(y_{n}) = 1(0)^{2^{3n} - 1}$
+	\par 
+	\noindent
+	Von der Definition 2.18 des Buches wissen wir dass $K(y_{n}) = K(Bin(y_{n}))$ gilt. Somit definieren wir ein $a_{n} = Bin(y_{n}) = 1(0)^{2^{3n} - 1}$
     
+    \par 
+    \noindent
     Wir definieren die Zahlenfolge $y_{1}, y_{2}, y_{3}...$ durch $y_{n} = 2^{3n}$ für alle $ n \in \mathbb{N} - {0}$.
-    Offenbar gilt $y_{n} < y_{n+1}$ und $n = \log_{2} \sqrt[3]{y_{n}}$
+    Offenbar gilt $y_{n} < y_{n+1}$ und $n = \log_{2} \sqrt[3]{y_{n}}$ für alle $n$.
     
-    \section*{Aufgabe 6}
-    
-    Wir definieren $A_{n}$, $\forall n \in \mathbb{N}$ als die Menge von allen natürlichen in dem Intervall:
-    \begin{center}
-    $[2^n, 2^{n+1} - 1]$, bzw. $A_{n} = \{w_{n}|$ $2^n \le w_{n} \le 2^{n+1} - 1, w_{n} \in \mathbb{N}\}$
-    \end{center}
-    
-    
-    \par 
-    \noindent
-    Wir wissen von der Aussage, dass die untere Schranke von jeder Menge $A_{n}$: 
-	\begin{center}
-	$2^n$ ist. \\
-\end{center}	    
    
-   	\noindent
-    Jetzt möchten wir alle natürlichen Zahlen von diesen Mengen $A_{n}$ als binäre Kodierung repräsentieren. \\
-    Die äquivalenten Mengen für die binäre Kodierung von den natürlichen Zahlen der Mengen $A_{n}$ sind:
-	\begin{center}
-	 $B_{n} = (\Sigma_{bool})^n $, $\forall n \in \mathbb{N}$
-\end{center}	    
-    
-    
-    \par 
-  	\noindent
-  	Von dieser Äquivalenz, definieren wir die folgende Gleichung: 
-	\begin{center}
-	$Bin(w_{n}) = y_{n}$ wobei $w_{n} \in A_{n}$ und $y_{n} \in B_{n}$, $\forall n \in \mathbb{N}$
-\end{center}	  	
-  	
-  	\par 
-  	\noindent
-  	Ausserdem, alle Wörter $y_{n} \in B_{n}$ haben eine Länge von $n + 1$ bzw. $|y_{n}| = n + 1$
-  	
-    \par 
-    \noindent
-    Somit haben wir eine Kolmogorov-Komplexität von: 
-    \begin{center}
-    $|yn| + c \ge K(y_{n})$
-    \end{center}
 \end{document}
